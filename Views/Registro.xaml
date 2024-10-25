@@ -4,12 +4,21 @@
              x:Class="dsegoviaExamen.Views.Registro">
     <VerticalStackLayout Padding="20"
                          Spacing="20">
+
+        <Label x:Name="lblUsuario"
+            HorizontalOptions="Center"
+            TextColor="Blue"
+            VerticalOptions="Start"
+            FontSize="24"
+            HorizontalTextAlignment="End"
+            FontAttributes="Bold"/>
         
         <Label Text="REGISTRO"
         HorizontalOptions="Center"
         VerticalOptions="Start"
         FontSize="24"
         FontAttributes="Bold"/>
+        
 
         <Grid>
             <Grid.RowDefinitions>
@@ -25,20 +34,20 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
 
-                  
+
+
             <Label Text="Fecha:" 
              Grid.Row="0" 
              Grid.Column="0" 
              VerticalOptions="Center"/>
-            <DatePicker Grid.Row="0" Grid.Column="1" />
+            <DatePicker x:Name="Fecha" Grid.Column="1" />
 
             <Label Text="País:" 
              Grid.Row="1" 
              Grid.Column="0" 
              VerticalOptions="Center"/>
-                       
+
             <Picker x:Name="paisPicker" Grid.Row="1" Grid.Column="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -58,8 +67,8 @@
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Quito</x:String>
-                        <x:String>B</x:String>
-                        <x:String>P</x:String>
+                        <x:String>Cartagena</x:String>
+                        <x:String>Cualquier</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
@@ -68,30 +77,39 @@
                    Grid.Row="3" 
                    Grid.Column="0" 
                    VerticalOptions="Center"/>
+            
             <Entry x:Name="montoInicialEntry" 
                    Grid.Row="3" 
                    Grid.Column="1" 
                    Placeholder="Ingrese el monto inicial" />
-
-
+            
             <Label Text="Pago Mensual:" 
                    Grid.Row="4" 
                    Grid.Column="0" 
                    VerticalOptions="Center"/>
-            <Button Text="Calcular Pago mensual"
-            Grid.Row="5" Grid.Column="0"
-            Clicked="Button_Clicked"/>
             
             <Entry x:Name="pagoMensualEntry" 
                    Grid.Row="4" 
                    Grid.Column="1" 
                    IsReadOnly="True" 
                    Placeholder="Calculado" />
+            <Button Text="Calcular Pago Mensual"
+                    Grid.Row="5" 
+                    Grid.Column="0"
+                    Clicked="Button_Clicked"/>
         </Grid>
 
-        <Grid ColumnDefinitions="*,*,*"
-                  RowDefinitions="Auto,Auto"
-                  Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
 
             <Label Text="Nombre" Grid.Row="0" Grid.Column="0" />
@@ -104,12 +122,11 @@
             <Entry x:Name="edadEntry" Placeholder="Ingresar Edad" Grid.Row="1" Grid.Column="2" Keyboard="Numeric"/>
         </Grid>
 
-       
+
         <Button Text="Ver Resumen"
                     HorizontalOptions="Center"
                     VerticalOptions="End"
                     Clicked="Button_Clicked_1"/>
-
 
     </VerticalStackLayout>
 </ContentPage>

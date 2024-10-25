@@ -15,7 +15,7 @@
         <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"
-                   HeightRequest="50"
+                   HeightRequest="75"
                    />
 
         <Grid>

@@ -18,7 +18,7 @@ public partial class Login : ContentPage
         {
             if (usuario == usuarios[i] && contraseña == contraseñas[i])
             {
-                await Navigation.PushAsync(new Registro());
+                await Navigation.PushAsync(new Registro(usuario));
                 return;
             }
         }
