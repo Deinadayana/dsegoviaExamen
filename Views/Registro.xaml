@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dsegoviaExamen.Views.Registro">
+    <VerticalStackLayout Padding="20"
+                         Spacing="20">
+        
+        <Label Text="REGISTRO"
+        HorizontalOptions="Center"
+        VerticalOptions="Start"
+        FontSize="24"
+        FontAttributes="Bold"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+
+                  
+            <Label Text="Fecha:" 
+             Grid.Row="0" 
+             Grid.Column="0" 
+             VerticalOptions="Center"/>
+            <DatePicker Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="País:" 
+             Grid.Row="1" 
+             Grid.Column="0" 
+             VerticalOptions="Center"/>
+                       
+            <Picker x:Name="paisPicker" Grid.Row="1" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Ecuador</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Perú</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Ciudad:" 
+                   Grid.Row="2" 
+                   Grid.Column="0" 
+                   VerticalOptions="Center"/>
+
+            <Picker x:Name="cuidadPicker" Grid.Row="2" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Quito</x:String>
+                        <x:String>B</x:String>
+                        <x:String>P</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Monto Inicial:" 
+                   Grid.Row="3" 
+                   Grid.Column="0" 
+                   VerticalOptions="Center"/>
+            <Entry x:Name="montoInicialEntry" 
+                   Grid.Row="3" 
+                   Grid.Column="1" 
+                   Placeholder="Ingrese el monto inicial" />
+
+
+            <Label Text="Pago Mensual:" 
+                   Grid.Row="4" 
+                   Grid.Column="0" 
+                   VerticalOptions="Center"/>
+            <Button Text="Calcular Pago mensual"
+            Grid.Row="5" Grid.Column="0"
+            Clicked="Button_Clicked"/>
+            
+            <Entry x:Name="pagoMensualEntry" 
+                   Grid.Row="4" 
+                   Grid.Column="1" 
+                   IsReadOnly="True" 
+                   Placeholder="Calculado" />
+        </Grid>
+
+        <Grid ColumnDefinitions="*,*,*"
+                  RowDefinitions="Auto,Auto"
+                  Padding="20">
+
+
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="0" />
+            <Label Text="Apellido" Grid.Row="0" Grid.Column="1" />
+            <Label Text="Edad" Grid.Row="0" Grid.Column="2" />
+
+
+            <Entry x:Name="nombreEntry" Placeholder="Ingresar Nombre" Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="apellidoEntry" Placeholder="Ingresar Apellido" Grid.Row="1" Grid.Column="1" />
+            <Entry x:Name="edadEntry" Placeholder="Ingresar Edad" Grid.Row="1" Grid.Column="2" Keyboard="Numeric"/>
+        </Grid>
+
+       
+        <Button Text="Ver Resumen"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Clicked="Button_Clicked_1"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

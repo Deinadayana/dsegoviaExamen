@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dsegoviaExamen.Views.Login">
+    <VerticalStackLayout Padding="20"
+                         Spacing="20">
+        
+
+        <Label Text="Login"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   TextColor="Red"
+                   FontSize="20"/>
+
+        <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   HeightRequest="50"
+                   />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Usuario:" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            VerticalOptions="Center" />
+            
+            <Entry x:Name="txtUsuario" 
+             Grid.Row="0" 
+             Grid.Column="1" 
+             Placeholder="Ingrese su usuario"/>
+
+           
+            <Label Text="Contraseña:" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   VerticalOptions="Center" />
+            
+            <Entry x:Name="txtContraseña" 
+                   Grid.Row="1" 
+                   Grid.Column="1" 
+                   IsPassword="True" 
+                   Placeholder="Ingrese su contraseña"/>
+        </Grid>
+
+
+        <Button Text="Iniciar Sesión"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
